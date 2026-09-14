@@ -151,7 +151,10 @@ data
 ¿Cuál es la relación entre la expectativa de vida y el PIB per cápita en el continente asiático en el año 2007? Muestra tus resultados gráficamente.
 
 ```{r lifeexp-gdp-asia}
-
+data |>
+  filter(anio == 2007, continente == "Asia") |>
+  ggplot(aes(x = pib_per_capita, y = esperanza_de_vida)) +
+  geom_point()
 ```
 
 ¿Cómo difiere esta relación de la relación en el continente africano en el mismo año? Muestra tus resultados gráficamente.
