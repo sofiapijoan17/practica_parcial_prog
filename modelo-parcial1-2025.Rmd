@@ -73,7 +73,11 @@ data |>
 Crea y muestra un conjunto de datos que muestre el PIB per cápita promedio para cada continente en cada año. Tu resultado debe tener tres columnas: `anio`, `continente` y `pib_per_capita`.
 
 ```{r avg-gdp-per-continent}
-
+data |>
+  group_by(anio, continente) |>
+  summarise(
+    pib_per_capita = mean(pib_per_capita, na.rm = TRUE)
+  )
 ```
 
 Crea un nuevo conjunto de datos llamado `edv_continente` que muestre el promedio de la esperanza de vida para cada continente en cada año. Donde cada continente sera una columna, cada año una fila y el promedio de la esperanza de vida en cada celda.   
