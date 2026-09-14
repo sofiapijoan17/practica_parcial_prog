@@ -1,0 +1,115 @@
+---
+title: "Examen modelo"
+output: html_document
+date: "2025-09-10"
+---
+
+```{r setup, include=FALSE}
+
+```
+
+
+## Instrucciones
+
+1. Debes completar el examen en un máximo de 120 minutos.
+
+2. Puedes utilizar cualquier libro, recurso en línea o código antiguo durante este examen, pero no puedes comunicarte con ninguna persona que no sean tus examinadores.
+
+3. Sigue las instrucciones en este archivo .Rmd para completar tu examen.
+
+4. Debes usar las funciones que vimos en clase, en el libro de la materia y en los ejercicios hasta la ultima leccion, siguiendo los consejos vistos en clase.
+
+7. No te olvides de hacer **commit y push** para que tus cambios sean enviados a **GitHub Classroom.**
+
+8. Este examen parcial consta de varias tareas que debes completar. Cada tarea se describe en un chunk de código separado. Debes completar cada tarea en el chunk correspondiente.
+
+
+## Cargar paquetes
+
+Vas a tener que leer archivos CSV y luego realizar una serie de tareas de manipulacion y visualizacion de datos. Carga en el _chunk de setup_ los paquetes necesarios para realizar estas tareas.
+
+## Cargar y Mostrar Datos
+
+lee el archivo `gapminder.csv` y guarda el resultado en un tibble llamado `data`.
+
+```{r load-data}
+
+```
+
+Usando los datos en `data`, crea un histograma para mostrar la distribución de la expectativa de vida segmentada por continente, con barras separadas para cada continente.
+
+```{r plot-life-exp-histogram}
+
+```
+
+## Analizar Datos
+
+Encuentra y muestra el nombre del país con la mayor expectativa de vida en el año 2007. Tu salida debe consistir únicamente en el nombre del país.
+
+```{r max-life-exp-country}
+
+```
+
+Muestra el número de países por continente. Tu salida debe tener dos columnas: continente y número de países. Ordenarla de menor a mayor.
+
+```{r count-countries}
+
+```
+
+Crea y muestra un conjunto de datos que muestre el PIB per cápita promedio para cada continente en cada año. Tu resultado debe tener tres columnas: `anio`, `continente` y `pib_per_capita`.
+
+```{r avg-gdp-per-continent}
+
+```
+
+Crea un nuevo conjunto de datos llamado `edv_continente` que muestre el promedio de la esperanza de vida para cada continente en cada año. Donde cada continente sera una columna, cada año una fila y el promedio de la esperanza de vida en cada celda.   
+
+```{r edv_continente}
+
+```
+
+Lee el archivo `idiomas.csv` y guarda el resultado en un conjunto de datos llamado `idiomas`.
+
+```{r idiomas}
+
+```
+
+Encuentra el listado de paises que corresponden al continente americano y guardalo en un nuevo conjunto de datos llamado `america`. Debe contener una fila por cada pais.
+
+```{r america}
+
+
+```
+
+Usando los conjuntos de datos `idiomas` y `america`, muestra el número de paises que habla cada idioma oficial, utilizando los valores de la columna `idioma_oficial_1`. Tu salida debe tener una fila para cada idioma y dos columnas: una que muestre el nombre del idioma y otra que muestre el número de paises.
+
+```{r union}
+
+```
+
+
+## Limpieza de Datos
+
+La columna `continente` tiene el valor "Américas".  Cambia el valor de la columna continente a "América del Sur y Central" y "América del Norte" segun corresponda. Los paises que corresponden a "America del Norte" son Canadá, Estados Unidos y México.
+
+```{r arregla-continente}
+
+
+```
+
+
+## Visualizacion
+
+¿Cuál es la relación entre la expectativa de vida y el PIB per cápita en el continente asiático en el año 2007? Muestra tus resultados gráficamente.
+
+```{r lifeexp-gdp-asia}
+
+```
+
+¿Cómo difiere esta relación de la relación en el continente africano en el mismo año? Muestra tus resultados gráficamente.
+
+```{r lifeexp-gdp-africa}
+
+
+```
+
