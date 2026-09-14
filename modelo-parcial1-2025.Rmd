@@ -83,7 +83,17 @@ data |>
 Crea un nuevo conjunto de datos llamado `edv_continente` que muestre el promedio de la esperanza de vida para cada continente en cada año. Donde cada continente sera una columna, cada año una fila y el promedio de la esperanza de vida en cada celda.   
 
 ```{r edv_continente}
+edv_continente <- data |>
+  group_by(anio, continente) |>
+  summarise(
+    esperanza_de_vida = mean(esperanza_de_vida, na.rm = TRUE)
+  ) |>
+  pivot_wider(
+    names_from = continente,
+    values_from = esperanza_de_vida
+  )
 
+edv_continente
 ```
 
 Lee el archivo `idiomas.csv` y guarda el resultado en un conjunto de datos llamado `idiomas`.
