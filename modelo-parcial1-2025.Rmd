@@ -160,7 +160,9 @@ data |>
 ¿Cómo difiere esta relación de la relación en el continente africano en el mismo año? Muestra tus resultados gráficamente.
 
 ```{r lifeexp-gdp-africa}
-
-
+data |>
+  filter(anio == 2007, continente == "África") |>
+  ggplot(aes(x = pib_per_capita, y = esperanza_de_vida)) +
+  geom_point()
 ```
 
