@@ -44,7 +44,9 @@ data
 Usando los datos en `data`, crea un histograma para mostrar la distribución de la expectativa de vida segmentada por continente, con barras separadas para cada continente.
 
 ```{r plot-life-exp-histogram}
-
+ggplot(data, aes(x = esperanza_de_vida)) +
+  geom_histogram() +
+  facet_wrap(~continente)
 ```
 
 ## Analizar Datos
