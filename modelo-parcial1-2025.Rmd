@@ -63,7 +63,11 @@ data |>
 Muestra el número de países por continente. Tu salida debe tener dos columnas: continente y número de países. Ordenarla de menor a mayor.
 
 ```{r count-countries}
-
+data |>
+  filter(anio == 2007) |>
+  group_by(continente) |>
+  summarise(numero_paises = n()) |>
+  arrange(numero_paises)
 ```
 
 Crea y muestra un conjunto de datos que muestre el PIB per cápita promedio para cada continente en cada año. Tu resultado debe tener tres columnas: `anio`, `continente` y `pib_per_capita`.
