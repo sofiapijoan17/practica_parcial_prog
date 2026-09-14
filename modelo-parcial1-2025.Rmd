@@ -129,8 +129,20 @@ inner_join(america, idiomas, by = "pais") |>
 La columna `continente` tiene el valor "Américas".  Cambia el valor de la columna continente a "América del Sur y Central" y "América del Norte" segun corresponda. Los paises que corresponden a "America del Norte" son Canadá, Estados Unidos y México.
 
 ```{r arregla-continente}
+data <- data |>
+  mutate(
+    continente = if_else(
+      continente == "Américas",
+      if_else(
+        pais %in% c("Canadá", "Estados Unidos", "México"),
+        "América del Norte",
+        "América del Sur y Central"
+      ),
+      continente
+    )
+  )
 
-
+data
 ```
 
 
