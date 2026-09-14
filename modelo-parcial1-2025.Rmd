@@ -54,7 +54,10 @@ ggplot(data, aes(x = esperanza_de_vida)) +
 Encuentra y muestra el nombre del país con la mayor expectativa de vida en el año 2007. Tu salida debe consistir únicamente en el nombre del país.
 
 ```{r max-life-exp-country}
-
+data |>
+  filter(anio == 2007) |>
+  filter(esperanza_de_vida == max(esperanza_de_vida)) |>
+  select(pais)
 ```
 
 Muestra el número de países por continente. Tu salida debe tener dos columnas: continente y número de países. Ordenarla de menor a mayor.
