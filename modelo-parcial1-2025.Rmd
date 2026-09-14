@@ -99,7 +99,9 @@ edv_continente
 Lee el archivo `idiomas.csv` y guarda el resultado en un conjunto de datos llamado `idiomas`.
 
 ```{r idiomas}
+idiomas <- read_csv("idiomas.csv")
 
+idiomas
 ```
 
 Encuentra el listado de paises que corresponden al continente americano y guardalo en un nuevo conjunto de datos llamado `america`. Debe contener una fila por cada pais.
