@@ -107,8 +107,12 @@ idiomas
 Encuentra el listado de paises que corresponden al continente americano y guardalo en un nuevo conjunto de datos llamado `america`. Debe contener una fila por cada pais.
 
 ```{r america}
+america <- data |>
+  filter(anio == 2007) |>
+  filter(continente == "Américas") |>
+  select(pais)
 
-
+america
 ```
 
 Usando los conjuntos de datos `idiomas` y `america`, muestra el número de paises que habla cada idioma oficial, utilizando los valores de la columna `idioma_oficial_1`. Tu salida debe tener una fila para cada idioma y dos columnas: una que muestre el nombre del idioma y otra que muestre el número de paises.
